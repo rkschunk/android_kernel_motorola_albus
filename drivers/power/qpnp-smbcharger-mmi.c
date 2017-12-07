@@ -4019,7 +4019,7 @@ static int smbchg_wls_get_property(struct power_supply *psy,
 				       enum power_supply_property prop,
 				       union power_supply_propval *val)
 {
-	int rc, pa = 0, ep = 0;
+	int rc, pa, ep;
 	union power_supply_propval ret = {0, };
 	struct smbchg_chip *chip = container_of(psy,
 						struct smbchg_chip, wls_psy);
@@ -4141,7 +4141,7 @@ static int smbchg_usbeb_get_property(struct power_supply *psy,
 				       enum power_supply_property prop,
 				       union power_supply_propval *val)
 {
-	int rc, pa = 0, ep = 0;
+	int rc, pa, ep;
 	union power_supply_propval ret = {0, };
 	struct smbchg_chip *chip = container_of(psy,
 						struct smbchg_chip, usbeb_psy);
@@ -9812,7 +9812,7 @@ static ssize_t force_chg_iusb_show(struct device *dev,
 					struct device_attribute *attr,
 					char *buf)
 {
-	int state = 0;
+	int state;
 	int ret;
 	u8 value;
 
